@@ -8,7 +8,7 @@ const app = express()
 
 const PORT = 3000
 
-MongoClient.connect('mongodb+srv://rosskeithbaker:mission1234@cluster0.ivupz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+MongoClient.connect(MONGO_CONNECT, {
     useUnifiedTopology: true})
         .then(client => {
         console.log('Connected to Database')
