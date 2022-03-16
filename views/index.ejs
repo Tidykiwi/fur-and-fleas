@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fur & Fleas</title>
+</head>
+<body>
+    <h1>Fur & Fleas</h1>
+    <div>
+        <h2>Create a product</h2>
+            <form action="/products" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="description" name="description">
+            <input type="number" placeholder="quantity" name="quantity">
+            <button type="submit">Submit</button>
+        </form> 
+    </div>
+    
+    <div>
+        <h2>Update a product</h2>
+        <p>Item hard-coded in main.js</p>
+        <button id="update-button">Update</button>
+    </div>
+    <div>
+        <h2>Delete a product</h2>
+        <p>Item hard-coded in main.js</p>
+        <button id="delete-button">Delete</button>
+    </div>
+    <div>
+        <h2>View Products</h2>
+        <ul class="products">
+            <!-- Loop through products -->
+            <% for (var i = 0; i < products.length; i++) {%>
+                <li class="product">
+                    <!-- Output name from the iterated product object -->
+                    <span>Name: <%= products[i].name %></span>
+                    <!-- Ouput quantity from the iterated product object -->
+                    <span>Quantity: <%= products[i].quantity %></span>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    <div id="message"></div>
+    <script src="../main.js"></script>
+</body>
+</html>
